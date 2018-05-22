@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Test</title>
+<script>
+    external.onclose = function() {
+    }
+
+    external.onmessage = function(msg){
+        external.postMessage("send back: " + msg);
+    };
+
+    function buttonClick(obj, evt) {
+        alert('BUTTON CLICKED  ');
+        external.postMessage("btn is clicked!");
+        return true;
+    }
+</script>
+</head>
+<body>
+<div> This is a test
+</div>
+<button onclick="javascript: buttonClick(this)">Click me!</button>
+</body>
+</html>
